@@ -1,8 +1,8 @@
 import React from 'react';
 import './card.style.scss';
 
-export const Card = params => {
-  const { name, image } = params.character;
+export const Card = props => {
+  const { name, image } = props.character;
   return (
     <li className="card">
       <img className="card__photo" src={image} alt={name} />

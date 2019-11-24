@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component';
+import { SearchBar } from './components/search-bar/search-bar.component';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      characters: []
+      characters: [],
+      searchBarValue: ''
     };
   }
 
@@ -30,6 +32,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>THE RICK AND MORTY characters</h1>
+          <SearchBar onChangeEvent={e => this.setState({ searchBarValue: e.target.value })} />
           <CardList characters={this.state.characters} />
         </header>
       </div>
