@@ -1,4 +1,6 @@
 import React from 'react';
-import './search-bar.style.scss';
+import './search-bar.styles.scss';
 
-export const SearchBar = props => <input onChange={props.onChangeEvent} className="search-bar" type="search" placeholder="Find character" />;
+export const SearchBar = ({ handleChange, placeholder }) => (
+  <input onChange={handleChange} className="search-bar" type="search" placeholder={placeholder} />
+);

@@ -1,8 +1,8 @@
 import React from 'react';
-import './card.style.scss';
+import './card.styles.scss';
 
-export const Card = props => {
-  const { name, image } = props.character;
+export const Card = ({ character }) => {
+  const { name, image } = character;
   return (
     <li className="card">
       <img className="card__photo" src={image} alt={name} />

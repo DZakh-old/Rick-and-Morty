@@ -1,6 +1,6 @@
 .card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 10rem;
   padding: 1em;
   color: #333;
   transition: transform 0.2s;
@@ -10,8 +10,9 @@
   }
 
   &__photo {
+    height: auto;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10rem;
   }
 
   &__name {

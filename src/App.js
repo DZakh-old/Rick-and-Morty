@@ -28,13 +28,18 @@ class App extends Component {
 
   render() {
     const { characters, searchBarValue } = this.state;
-    const filteredCharacters = characters.filter(character => character.name.toLowerCase().includes(searchBarValue.toLowerCase()));
+    const filteredCharacters = characters.filter(character =>
+      character.name.toLowerCase().includes(searchBarValue.toLowerCase())
+    );
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>THE RICK AND MORTY characters</h1>
-          <SearchBar onChangeEvent={e => this.setState({ searchBarValue: e.target.value })} />
+          <h1>RICK AND MORTY</h1>
+          <SearchBar
+            placeholder="Search characters"
+            handleChange={e => this.setState({ searchBarValue: e.target.value })}
+          />
           <CardList characters={filteredCharacters} />
         </header>
       </div>
