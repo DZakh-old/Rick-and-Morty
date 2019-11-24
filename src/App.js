@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { CardList } from './components/card-list/card-list.component';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: []
+      characters: []
     };
   }
 
@@ -16,8 +17,8 @@ class App extends Component {
       if (!res.ok) {
         throw Error(res.statusText);
       }
-      const monsters = await res.json();
-      this.setState({ monsters });
+      const characters = await res.json();
+      this.setState({ characters });
     } catch (err) {
       console.error(err);
     }
@@ -28,12 +29,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>World Monsters!</h1>
-          <ul>
-            {this.state.monsters.map(monster => (
-              <li key={monster.id}>{monster.name}</li>
-            ))}
-          </ul>
+          <h1>THE RICK AND MORTY characters</h1>
+          <CardList characters={this.state.characters} />
         </header>
       </div>
     );
