@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component';
 
@@ -13,12 +13,12 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/users');
+      const res = await fetch('https://rickandmortyapi.com/api/character');
       if (!res.ok) {
         throw Error(res.statusText);
       }
       const characters = await res.json();
-      this.setState({ characters });
+      this.setState({ characters: characters.results });
     } catch (err) {
       console.error(err);
     }
